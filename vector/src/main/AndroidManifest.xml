@@ -204,6 +204,14 @@
 
                 <data android:scheme="https" />
                 <data android:host="riot.im" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
                 <data android:host="app.element.io" />
                 <data android:host="mobile.element.io" />
                 <data android:host="develop.element.io" />
@@ -304,7 +312,8 @@
             android:supportsPictureInPicture="true" />
 
         <activity android:name=".features.terms.ReviewTermsActivity" />
-        <activity android:name=".features.widgets.WidgetActivity"
+        <activity
+            android:name=".features.widgets.WidgetActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
 
         <activity android:name=".features.pin.PinActivity" />
