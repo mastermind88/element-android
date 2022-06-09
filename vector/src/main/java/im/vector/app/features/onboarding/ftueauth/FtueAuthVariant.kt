@@ -379,10 +379,10 @@ class FtueAuthVariant(
 
         when (stage) {
             is Stage.ReCaptcha -> onCaptcha(stage)
-            is Stage.Email     -> onEmail(stage)
-            is Stage.Msisdn    -> onMsisdn(stage)
-            is Stage.Terms     -> onTerms(stage)
-            else               -> Unit // Should not happen
+            is Stage.Email -> onEmail(stage)
+            is Stage.Msisdn -> onMsisdn(stage)
+            is Stage.Terms -> onTerms(stage)
+            else -> Unit // Should not happen
         }
     }
 
@@ -391,7 +391,7 @@ class FtueAuthVariant(
             vectorFeatures.isOnboardingCombinedRegisterEnabled() -> addRegistrationStageFragmentToBackstack(
                     FtueAuthPhoneEntryFragment::class.java
             )
-            else                                                 -> addRegistrationStageFragmentToBackstack(
+            else -> addRegistrationStageFragmentToBackstack(
                     FtueAuthGenericTextInputFormFragment::class.java,
                     FtueAuthGenericTextInputFormFragmentArgument(TextInputFormFragmentMode.SetMsisdn, stage.mandatory),
             )
